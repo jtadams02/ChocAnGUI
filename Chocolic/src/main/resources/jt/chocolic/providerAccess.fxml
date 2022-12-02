@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jt.chocolic.providerController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="directory" mnemonicParsing="false" onAction="#startReporting" prefHeight="49.0" prefWidth="222.0" text="Request Provider Directory" VBox.vgrow="ALWAYS" />
+            <Button fx:id="billButton" layoutX="199.0" layoutY="96.0" mnemonicParsing="false" onAction="#beginBilling" prefHeight="49.0" prefWidth="222.0" text="Bill a Member" />
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="47.0" prefWidth="600.0">
+                     <items>
+                        <Label text="Provider Terminal">
+                           <font>
+                              <Font name="Microsoft YaHei UI Light" size="24.0" />
+                           </font>
+                        </Label>
+                     </items>
+                  </ToolBar>
+                  <ToolBar layoutX="10.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="47.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+                     <items>
+                        <Button fx:id="closeButton" mnemonicParsing="false" onAction="#exitTerminal" text="Return to Main Menu" />
+                     </items>
+                  </ToolBar>
+               </children>
+            </HBox>
+            <Label alignment="CENTER" text="You've been authenticated!" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
