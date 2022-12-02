@@ -11,7 +11,9 @@
  ## More on the Way
  
  
- If for some reason you want to look at this, clone and open in eclipse. This repository should have all dependencies necessary to just open it and have no errors
+ ~~If for some reason you want to look at this, clone and open in eclipse. This repository should have all dependencies necessary to just open it and have no errors~~
+ My mistake, you will need to have JavaFX runtime, I do not know how to include it within the lib/ yet, working on it 
+ 
  
  
  
