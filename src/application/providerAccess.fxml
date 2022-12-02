@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.providerTerminal">
+	<children>
+		<ToolBar fx:id="toolBarOne" nodeOrientation="RIGHT_TO_LEFT" prefHeight="47.0" prefWidth="900.0">
+	        <items>
+	          <Button fx:id="closeButton" mnemonicParsing="false" onAction="#exitTerminal" text="Close Terminal" />
+	          <Pane HBox.hgrow="ALWAYS" />
+            	<Label alignment="TOP_LEFT" text="Provider Terminal">
+               <font>
+                  <Font name="Microsoft YaHei UI Light" size="24.0" />
+               </font>
+            </Label>
+	        </items>
+	      </ToolBar>
+	 </children>
+</AnchorPane>

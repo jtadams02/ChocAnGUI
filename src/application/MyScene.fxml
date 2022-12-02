@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <center>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER" VBox.vgrow="always">
+         <children>
+            <Label text="Welcome to the ChocAn Terminal" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Microsoft YaHei UI Light" size="36.0" />
+               </font>
+            </Label>
+            <Label text="New and Improved!" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Microsoft YaHei UI Light" size="9.0" />
+               </font>
+            </Label>
+            <Label text="Select one of the options below:" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Microsoft YaHei UI Light" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="managerButton" mnemonicParsing="false" onAction="#managerAccess" prefHeight="40.0" text="Manager Access" />
+                  <Button fx:id="providerButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#providerAccess" prefHeight="40.0" text="Provider Access" />
+                  <Button fx:id="operatorButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#operatorAccess" prefHeight="40.0" text="Operator Access" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="100.0" left="40.0" right="40.0" />
+               </padding>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="TOP_RIGHT">
+        <items>
+          <Button fx:id="exitButton" alignment="CENTER" mnemonicParsing="false" onAction="#exitTerminal" text="Exit Terminal" />
+        </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <HBox blendMode="DIFFERENCE" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Chocoholics Anonymous ©2022" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
