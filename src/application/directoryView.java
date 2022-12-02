@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class providerView implements Initializable{
+public class directoryView implements Initializable{
 
 	 // On push, executes exitTerminal()
 	 @FXML

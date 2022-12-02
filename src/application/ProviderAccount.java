@@ -83,24 +83,122 @@ public class ProviderAccount extends Account
     
     
 
-    public void updateProvider(String inputName,String inputAddress,String inputCity,String inputState,int inputZip,float inputFees, int inputConsul)
+    public void updateProvider(String inputName,String inputPassword,String inputAddress,String inputCity,String inputState,int inputZip)
     {
         // This will take input, edit the values of the object, and then push it to the databse
         this.name = inputName;
+        this.password = inputPassword;
         this.address = inputAddress;
         this.city = inputCity;
         this.state = inputState;
         this.zip = inputZip;
-        this.feesPayable = inputFees;
-        this.numConsultations = inputConsul;
         
-        // Now send this object to the DB
-        System.out.println("Updated Provider!");
+        Database db = new Database();
+        
+        try {
+    		PreparedStatement stm = db.connection.prepareStatement("UPDATE `freedb_ChocAn`.`account` SET `name`=?, `address`=?, `city`=?, `state`=?, `zip`=? WHERE (`idNumber`='"+this.idNumber+"');");
+    		stm.setString(1, this.name);
+    		stm.setString(2, this.address);
+    		stm.setString(3, this.city);
+    		stm.setString(4, this.state);
+    		stm.setInt(5, this.zip);
+    		stm.executeUpdate();
+    	}
+    	catch (Exception exception) {
+    		System.out.println(exception);
+    	}
     }
+    
+    public void addProviderAccount(String inputName,String inputPassword, String inputAddress,String inputCity,String inputState,int inputZip) {
+    	Database db = new Database();
+    	this.name = inputName;
+    	this.password = inputPassword;
+        this.address = inputAddress;
+        this.city = inputCity;
+        this.state = inputState;
+        this.zip = inputZip;
+    	
+    	try {
+    		PreparedStatement stm = db.connection.prepareStatement("INSERT INTO `freedb_ChocAn`.`account` (`accountType`, `password`, `name`, `address`, `city`, `state`, `zip`) VALUES (?,?,?,?,?,?,?)");
+    		stm.setInt(1, this.accountType);
+    		stm.setString(2, this.password);
+    		stm.setString(3, this.name);
+    		stm.setString(4, this.address);
+    		stm.setString(5,  this.city);
+    		stm.setString(6, this.state);
+    		stm.setInt(7, this.zip);
+    		
+    		stm.executeUpdate();
+    	}
+    	catch (Exception exception) {
+    		System.out.println(exception);
+    	}
+    }
+    
+    // This function will also remove all correlating services from Service database
+    public void deleteProvider(int id) 
+    {
+    	
+    	this.idNumber = id;
+    	
+    	Database db = new Database();
+    	
+    	try {
+    		PreparedStatement stm = db.connection.prepareStatement("DELETE FROM `freedb_ChocAn`.`account` WHERE (`idNumber` = ?);");
+    		stm.setInt(1,this.idNumber);
+    		
+    		stm.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+    	
+    	try {
+    		PreparedStatement stm = db.connection.prepareStatement("DELETE FROM `freedb_ChocAn`.`service` WHERE (`providerId` = ?);");
+    		stm.setInt(1,this.idNumber);
+    		
+    		stm.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+    	
+    }
+    
 
     // These two functions just get the ID and Name
     public int getId(){
         return this.idNumber;
+    }
+    
+    public int getConsultations() 
+    {
+    	int numConsultations = 0;
+    	List<Service> services = Service.getServices();
+    	for(int i=0;i<services.size();i++) 
+    	{
+    		if(services.get(i).providerId==this.idNumber) 
+    		{
+    			numConsultations++;
+    		}
+    	}
+		return numConsultations;
+    }
+    
+    public float getFeesPayable() 
+    {
+    	float feesPayable =0;
+    	List<Service> services = Service.getServices();
+    	for(int i=0;i<services.size();i++) 
+    	{
+    		if(services.get(i).providerId==this.idNumber) 
+    		{
+    			feesPayable+=services.get(i).fee;
+    		}
+    	}
+    	
+		return feesPayable;
+    	
     }
     public String getName()
     {

@@ -81,6 +81,10 @@ public class memberView implements Initializable{
 				String idd = "ID: "+ id;
 				TreeItem<String> item = new TreeItem<String>(idd);
 				item.getChildren().add(new TreeItem<String>("Name: "+dis.name));
+				
+				// IDK if we should display passwords
+				item.getChildren().add(new TreeItem<String>("Password: "+dis.password));
+				
 				item.getChildren().add(new TreeItem<String>("Address: "+ dis.address));
 				item.getChildren().add(new TreeItem<String>("City: "+dis.city));
 				item.getChildren().add(new TreeItem<String>("State: " +dis.state));

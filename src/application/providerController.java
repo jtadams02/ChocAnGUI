@@ -55,7 +55,14 @@ public class providerController implements Initializable
    
    public void startReporting() throws Exception 
    {
+	// Lets try to switch scenes
+	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/directoryView.fxml"));
 	   
+	   Scene newScene = new Scene(newParent);
+	   
+	   Stage window = (Stage) closeButton.getScene().getWindow();
+	   window.setScene(newScene);
+	   window.show();
    }
    
    
