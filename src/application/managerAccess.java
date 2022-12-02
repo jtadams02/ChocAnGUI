@@ -26,7 +26,10 @@ public class managerAccess implements Initializable
 
 	 @FXML
 	 private Button closeButton;
-	 static boolean answer;
+	 
+	 @FXML
+	 private Button runReports;
+	 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
@@ -42,6 +45,17 @@ public class managerAccess implements Initializable
 	   window.setScene(newScene);
 	   window.show();
 	   
+   }
+   
+   public void startReporting() throws Exception
+   {
+	  Parent newParent = FXMLLoader.load(getClass().getResource("/application/displayReports.fxml"));
+	   
+	   Scene newScene = new Scene(newParent);
+	   
+	   Stage window = (Stage) closeButton.getScene().getWindow();
+	   window.setScene(newScene);
+	   window.show();
    }
  
 	

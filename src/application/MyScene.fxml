@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -26,6 +27,10 @@
                   <Font name="Microsoft YaHei UI Light" size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../lib/chocolate.png" />
+               </image></ImageView>
             <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" VBox.vgrow="ALWAYS">
                <children>
                   <Button fx:id="managerButton" mnemonicParsing="false" onAction="#managerAccess" prefHeight="40.0" text="Manager Access" />

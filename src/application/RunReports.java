@@ -17,25 +17,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class operatorAccess implements Initializable 
+public class RunReports implements Initializable 
 {
 
 	 @FXML
 	 private Button closeButton;
-	 static boolean answer;
 	 
 	 @FXML
-	 private Button editMembers;
+	 private Button returnButton;
 	 
 	 @FXML
-	 private Button editProviders;
+	 private TreeView<String> memberReport;
 	 
 	 @FXML
-	 private Button editManagers;
+	 private TreeView<String> providerReport;
+	 
+	 @FXML
+	 private TreeView<String> summaryReport;
 	 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -54,19 +57,26 @@ public class operatorAccess implements Initializable
 	   
    }
    
-   public void members() 
+   public void startReporting() throws Exception
    {
+	  Parent newParent = FXMLLoader.load(getClass().getResource("/application/displayReports.fxml"));
 	   
+	   Scene newScene = new Scene(newParent);
+	   
+	   Stage window = (Stage) closeButton.getScene().getWindow();
+	   window.setScene(newScene);
+	   window.show();
    }
    
-   public void providers() 
+   public void goBack() throws IOException 
    {
+	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/managerAccess.fxml"));
 	   
-   }
-   
-   public void managers() 
-   {
+	   Scene newScene = new Scene(newParent);
 	   
+	   Stage window = (Stage) closeButton.getScene().getWindow();
+	   window.setScene(newScene);
+	   window.show();
    }
  
 	

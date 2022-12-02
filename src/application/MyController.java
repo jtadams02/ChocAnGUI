@@ -149,7 +149,15 @@ public class MyController implements Initializable {
         				   {
         					   answer=true;
         				   } else {errorDisplay("Incorrect Information/Authentication Failed");}
-            		   } 
+            		   }
+    				   if(accountType==4) 
+    				   {
+    					   ProviderAccount temp = new ProviderAccount(id,pass.getText());
+    					   if(temp.verify()) 
+        				   {
+        					   answer=true;
+        				   } else {errorDisplay("Incorrect Information/Authentication Failed");}
+    				   }
             		   window.close();
     			   } else 
     			   {
@@ -188,6 +196,15 @@ public class MyController implements Initializable {
         					   answer=true;
         				   } else {errorDisplay("Incorrect Information/Authentication Failed");}
             		   }
+    				   
+    				   if(accountType==4) 
+    				   {
+    					   ProviderAccount temp = new ProviderAccount(id,pass.getText());
+    					   if(temp.verify()) 
+        				   {
+        					   answer=true;
+        				   } else {errorDisplay("Incorrect Information/Authentication Failed");}
+    				   }
             		   window.close();
     			   } else 
     			   {
@@ -228,10 +245,14 @@ public class MyController implements Initializable {
         		   } 
 				   if(accountType==4) 
 				   {
-					   
+					   ProviderAccount temp = new ProviderAccount(id,pass.getText());
+					   if(temp.verify()) 
+    				   {
+    					   answer=true;
+    				   } else {errorDisplay("Incorrect Information/Authentication Failed");}
 				   }
         		   window.close();
-			   } else 
+			   }	 else 
 			   {
 				   errorDisplay("ID must be a number!");
 			   }

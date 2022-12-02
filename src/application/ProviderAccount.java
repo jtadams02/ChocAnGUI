@@ -1,4 +1,4 @@
-package application;
+	package application;
 
 
 import java.util.*;
@@ -31,10 +31,11 @@ public class ProviderAccount extends Account
      * The constructor that will actually be used, this will create a ProviderAccount object that matches ID with databse and retrieves data
      * @param providerID
      */
-    public ProviderAccount(int providerID)
+    public ProviderAccount(int providerID, String pass)
     {
         this.accountType = 4;
         this.idNumber = providerID;
+        this.password = pass;
         this.getProviderAccount(); // this will retrive info from databse and set the values of the object to them
     }
 

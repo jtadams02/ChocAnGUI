@@ -90,7 +90,21 @@ public class Account
         {
             // Just realized, all of these verify functions are detailed for no reason lol, all the constructors grab the password oops
             // security in here is really bad
+        	
+        	List<ProviderAccount> list = ProviderAccount.getProviderAccounts();
+        	
+        	//Now we verify, no need for information yet
+        	
+        	for(int i=0;i<list.size();i++) 
+        	{
+        		if(this.idNumber==list.get(i).idNumber&&this.password.compareTo(list.get(i).password)==0) 
+        		{
+        			return true;
+        		}
+        	}
+        	return false;
         }
+        
         return true;
     }
 

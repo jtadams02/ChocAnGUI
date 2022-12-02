@@ -26,6 +26,15 @@ public class providerAccess implements Initializable
 
 	 @FXML
 	 private Button closeButton;
+	 
+	 @FXML
+	 private Button directory;
+	 
+	 @FXML
+	 private Button billButton;
+	 
+	 
+	 
 	 static boolean answer;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -41,6 +50,17 @@ public class providerAccess implements Initializable
 	   Stage window = (Stage) closeButton.getScene().getWindow();
 	   window.setScene(newScene);
 	   window.show();
+	   
+   }
+   
+   public void startReporting() throws Exception 
+   {
+	   
+   }
+   
+   
+   public void beginBilling() throws Exception 
+   {
 	   
    }
  

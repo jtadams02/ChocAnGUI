@@ -44,9 +44,9 @@ public class Main extends Application {
 
 
 /*
- *  THIS IS HUGE HOLY SHIT
+ *  
  *  DISPLAYING INFO IN SUMMARY REPORT??
- *  USE A FUCKING TREE VIEW BABY WOOO
+ *  USE A  TREE VIEW BABY WOOO
  *  	
  *  
  *  // Create Branches
