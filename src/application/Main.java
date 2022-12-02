@@ -1,4 +1,4 @@
-	package application;
+package application;
 	
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -16,6 +16,9 @@ public class Main extends Application {
 	Scene scene;
 	TreeView<String> treeView;
 	
+	// Built this entire GUI from almost scratch, with 0 experience in JavaFX in less than 24 hours
+	// Definitely is one of my most proudest achievements in coding
+	// Time worked: 11:30AM-4AM
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);
@@ -43,7 +46,7 @@ public class Main extends Application {
 
 
 
-/*
+/* Ignore all below, can be removed
  *  
  *  DISPLAYING INFO IN SUMMARY REPORT??
  *  USE A  TREE VIEW BABY WOOO

@@ -21,7 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class providerAccess implements Initializable 
+public class providerController implements Initializable 
 {
 
 	 @FXML

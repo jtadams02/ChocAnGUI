@@ -17,6 +17,11 @@ public class ManagerAccount extends Account
 	public ManagerAccount() {
 		accountType = 3;
 	}
+	
+	public ManagerAccount(int id) {
+		this.accountType = 3;
+		this.idNumber = id;
+	}
 
     public ManagerAccount(int id, String pass)
     {
@@ -54,11 +59,17 @@ public class ManagerAccount extends Account
 		return accounts;
     }
     
-    public void AddManagerAccount() {
+    public void AddManagerAccount(String inputName,String inputPassword, String inputAddress,String inputCity,String inputState,int inputZip) {
     	Database db = new Database();
+    	this.name = inputName;
+    	this.password = inputPassword;
+        this.address = inputAddress;
+        this.city = inputCity;
+        this.state = inputState;
+        this.zip = inputZip;
     	
     	try {
-    		PreparedStatement stm = db.connection.prepareStatement("INSERT INTO account (accountType, password, name, address, city, state, zip) VALUES (?,?,?,?,?,?,?)");
+    		PreparedStatement stm = db.connection.prepareStatement("INSERT INTO `freedb_ChocAn`.`account` (`accountType`, `password`, `name`, `address`, `city`, `state`, `zip`) VALUES (?,?,?,?,?,?,?)");
     		stm.setInt(1, this.accountType);
     		stm.setString(2, this.password);
     		stm.setString(3, this.name);
@@ -104,5 +115,23 @@ public class ManagerAccount extends Account
     		System.out.println(exception);
     	}
             
+    }
+    
+    public void deleteManager(int id) 
+    {
+    	this.idNumber = id;
+    	
+    	Database db = new Database();
+    	
+    	try {
+    		PreparedStatement stm = db.connection.prepareStatement("DELETE FROM `freedb_ChocAn`.`account` WHERE (`idNumber` = ?);");
+    		stm.setInt(1,this.idNumber);
+    		
+    		stm.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+    	
     }
 }

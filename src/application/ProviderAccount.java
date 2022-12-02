@@ -26,6 +26,12 @@ public class ProviderAccount extends Account
     {
         this.accountType = 4;
     }
+    
+    // This contructor is used for adding via GUI
+    public ProviderAccount(int provID) {
+    	this.idNumber=provID;
+    	this.accountType=4;
+    }
 
     /**
      * The constructor that will actually be used, this will create a ProviderAccount object that matches ID with databse and retrieves data
@@ -41,6 +47,7 @@ public class ProviderAccount extends Account
 
     private void getProviderAccount()
     {
+    	// Very very crude
         int idLookup = this.idNumber;
         // Use this id to match it to the corresponding row/column in database (idk how the data is setup)
         List<ProviderAccount> list = getProviderAccounts();
@@ -70,16 +77,11 @@ public class ProviderAccount extends Account
             this.zip = 0;
             this.feesPayable = 0;
             this.numConsultations = 0;
-            this.password = "you will never guess this password muwahahahahahaha";
+            this.password = "1110"; // 14 is the greatest number btw
         }
     }
-    public static boolean startBilling()
-    {
-        // Not sure how billing will work yet, will this push to a billingDB?
-        System.out.println("----------------\nPlease enter the amount to be billed: ");
-        float fee = scan.nextFloat();
-        return true;
-    }
+    
+    
 
     public void updateProvider(String inputName,String inputAddress,String inputCity,String inputState,int inputZip,float inputFees, int inputConsul)
     {

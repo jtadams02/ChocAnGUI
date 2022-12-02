@@ -17,28 +17,25 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TreeView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class RunReports implements Initializable 
+public class operatorController implements Initializable 
 {
 
 	 @FXML
 	 private Button closeButton;
+	 static boolean answer;
 	 
 	 @FXML
-	 private Button returnButton;
+	 private Button editMembers;
 	 
 	 @FXML
-	 private TreeView<String> memberReport;
+	 private Button editProviders;
 	 
 	 @FXML
-	 private TreeView<String> providerReport;
-	 
-	 @FXML
-	 private TreeView<String> summaryReport;
+	 private Button editManagers;
 	 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -57,9 +54,10 @@ public class RunReports implements Initializable
 	   
    }
    
-   public void startReporting() throws Exception
+   public void members() throws Exception
    {
-	  Parent newParent = FXMLLoader.load(getClass().getResource("/application/displayReports.fxml"));
+	// Lets try to switch scenes
+	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/members.fxml"));
 	   
 	   Scene newScene = new Scene(newParent);
 	   
@@ -68,9 +66,22 @@ public class RunReports implements Initializable
 	   window.show();
    }
    
-   public void goBack() throws IOException 
+   public void providers() throws Exception
    {
-	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/managerAccess.fxml"));
+	// Lets try to switch scenes
+	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/providers.fxml"));
+	   
+	   Scene newScene = new Scene(newParent);
+	   
+	   Stage window = (Stage) closeButton.getScene().getWindow();
+	   window.setScene(newScene);
+	   window.show();
+   }
+   
+   public void managers() throws Exception
+   {
+	// Lets try to switch scenes
+	   Parent newParent = FXMLLoader.load(getClass().getResource("/application/managers.fxml"));
 	   
 	   Scene newScene = new Scene(newParent);
 	   
