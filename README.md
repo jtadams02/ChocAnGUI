@@ -15,8 +15,8 @@
 Completely functional for the scope of the project
  
  
- ~~If for some reason you want to look at this, clone and open in eclipse. This repository should have all dependencies necessary to just open it and have no errors~~
- My mistake, you will need to have JavaFX runtime, I do not know how to include it within the lib/ yet, working on it 
+ ~~If for some reason you want to look at this, clone and open in eclipse. This repository should have all dependencies necessary to just open it and have no errors~~  
+ My mistake, you will need to have JavaFX runtime, and I do not recommend eclipse. If you're doing JavaFX, then Intellij is the way to go. Learned that the hard way
  
  
  
